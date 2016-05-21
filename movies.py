@@ -2,6 +2,7 @@ from models import Movie
 from fresh_tomatoes import open_movies_page
 
 
+# My list of favorite movies represented as a list of dict
 my_list = [
     {
         'title': "The Dark Knight",
@@ -27,5 +28,9 @@ my_list = [
 ]
 
 def launch():
+    # Creates list of movie instances by looping through my_list and using
+    # Movie constructor to create Movie instance
     movies = [Movie(**m) for m in my_list]
+    # Insert list into open_movies_page function from fresh_tomatoes to
+    # launch page
     open_movies_page(movies)
